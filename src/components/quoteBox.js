@@ -5,7 +5,6 @@ const Data = [{ Icon: FaTwitter }, { Icon: FaInstagram }];
 const QuoteBox = ({ quotes, styles, color, showData, myObject }) => {
   const handleClick = () => {
     let myObj = quotes[Math.floor(Math.random() * quotes.length)];
-    console.log(quotes);
     showData(myObj["quote"], myObj["author"]);
   };
   useEffect(() => {

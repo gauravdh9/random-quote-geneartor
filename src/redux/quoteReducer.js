@@ -1,4 +1,5 @@
-import { Fetchaction, Changeaction } from "./action";
+import { Myaction } from "./action";
+
 const initialState = {
   quotes: [],
   color: "rgb(0,0,0)",
@@ -11,9 +12,8 @@ const mycolors = () => {
   return `rgb(${r},${g},${b})`;
 };
 export const quoteReducer = (state = initialState, action) => {
-  console.log(action.payload);
   switch (action.type) {
-    case Fetchaction:
+    case Myaction.Fetch:
       return {
         quotes: action.payload,
         color: mycolors(),
@@ -22,7 +22,7 @@ export const quoteReducer = (state = initialState, action) => {
           author: state.myObject.author,
         },
       };
-    case Changeaction:
+    case Myaction.Change:
       return {
         quotes: state.quotes,
         color: mycolors(),
