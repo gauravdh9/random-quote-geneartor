@@ -7,6 +7,7 @@ const QuoteBox = ({ quotes, styles, color, showData, myObject }) => {
     let myObj = quotes[Math.floor(Math.random() * quotes.length)];
     showData(myObj["quote"], myObj["author"]);
   };
+  console.log(quotes);
   useEffect(() => {
     if (quotes?.length > 0) {
       handleClick();
@@ -45,6 +46,10 @@ const QuoteBox = ({ quotes, styles, color, showData, myObject }) => {
           New Quote
         </button>
       </div>
+      <span>
+        -by <span className="text-xl mr-0.5 font-bold">G</span>aurav
+        <span className="text-xl mr-0.5 font-bold">D</span>himan
+      </span>
     </div>
   );
 };
